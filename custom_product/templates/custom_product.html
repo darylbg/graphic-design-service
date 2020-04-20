@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+
+{% block page_heading %}Design your graphic{% endblock %}
+
+{% block content %}
+<form class="" action="" method="post">
+  {% csrf_token %}
+  {{ custom_product_form | as_bootstrap }}
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}
