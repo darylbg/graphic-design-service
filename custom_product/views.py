@@ -1,17 +1,17 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .forms import CustomProductForm
+from .forms import OrderProductForm
 from django.template.context_processors import csrf
 
 # Create your views here.
-def custom_product_view(request):
+def orders(request):
     if request.method == 'POST':
-        custom_product_form = CustomProductForm(request.POST)
+        order_product_form = OrderProductForm(request.POST)
 
-        if custom_product_form.is_valid():
+        if order_product_form.is_valid():
             return HttpResponseRedirect('/thanks/')
 
     else:
-        custom_product_form = CustomProductForm()
+        order_product_form = OrderProductForm()
 
-    return render(request, 'custom_product.html', {'custom_product_form': custom_product_form})
+    return render(request, 'order-product.html', {'order_product_form': order_product_form})

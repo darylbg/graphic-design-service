@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block page_title %}home Page{% endblock %}
+
+{% block page_heading %}home{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column bd-highlight mb-3">
+  {% for product in products %}
+    <div class="product-display p-2 bd-highlight">
+      <div class="product-image">
+        <img src="{{ MEDIA_URL }}{{ product.image }}" alt="">
+      </div>
+      <div class="product-detail">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="product-description">{{ product.type }}</p>
+        <p class="product-description">{{ product.size }}</p>
+        <p class="product-description">{{ product.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

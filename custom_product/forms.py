@@ -1,8 +1,8 @@
 from django import forms
 from django.forms import ModelForm
-from .models import CustomProduct
+from products.models import Product
 
-class CustomProductForm(forms.ModelForm):
+class OrderProductForm(forms.ModelForm):
     class Meta:
-        model = CustomProduct
+        model = Product
         fields = ('type', 'size', 'description')

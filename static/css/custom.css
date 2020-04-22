@@ -1,3 +1,53 @@
-h1 {
-  color: blue;
+/*--------------------general styles------------*/
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------home products display------------*/
+
+
+
+.product-display {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.product-image {
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+}
+
+@media (max-width: 850px) {
+  .product-image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+}
+
+.product-detail {
+  display: inline-block;
+  width: 30%;
+  float: right;
+  padding-left: 25px;
+}
+
+@media (max-width: 850px) {
+  .product-detail {
+    display: block;
+    width: 100%;
+  }
+}
+
+.product-price-form {
+  margin-bottom: 16px;
 }

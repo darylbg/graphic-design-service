@@ -8,8 +8,10 @@
 {% block content %}
 <form class="" action="" method="post">
   {% csrf_token %}
-  {{ custom_product_form | as_bootstrap }}
+  {{ order_product_form | as_bootstrap }}
 
-  <button type="submit" class="btn btn-primary">Login</button>
+  <div class="quote">price quote:</div>
+
+  <button type="submit" class="btn btn-primary">Send Request</button>
 </form>
 {% endblock %}
