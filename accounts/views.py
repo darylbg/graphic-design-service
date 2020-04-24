@@ -6,19 +6,11 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 from home.views import home
 
 
+"""def index(request):
+    Return the index.html file
+    return render(request,  'index.html')"""
+
 def index(request):
-    """Return the index.html file"""
-    return render(request,  'index.html')
-
-@login_required
-def logout(request):
-    """Log the user out"""
-    auth.logout(request)
-    messages.success(request, "You have successfully been logged out")
-    return redirect(reverse('index'))
-
-
-def login(request):
     """Return a login page"""
     if request.user.is_authenticated:
         return redirect(reverse('index'))
@@ -37,7 +29,15 @@ def login(request):
                 login_form.add_error(None, "Your username or password is incorrect")
     else:
         login_form = UserLoginForm()
-    return render(request, 'login.html', {'login_form': login_form})
+    return render(request, 'index.html', {'login_form': login_form})
+
+
+@login_required
+def logout(request):
+    """Log the user out"""
+    auth.logout(request)
+    messages.success(request, "You have successfully been logged out")
+    return redirect(reverse('index'))
 
 
 def registration(request):

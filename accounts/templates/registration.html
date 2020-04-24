@@ -6,10 +6,19 @@
 {% block page_heading %}User Registration{% endblock %}
 
 {% block content %}
-<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
-<form action="" method="POST">
-  {% csrf_token %}
-  {{ registration_form | as_bootstrap }}
-  <button type="submit">Register</button>
-</form>
+
+<section class="row body-background">
+  <div class="col-12 col-md-6"">
+    <div class="register-page">
+    <h3 class="register-title" style="padding-left: 50px; padding-right: 50px; padding-top: 30px;">Register</h3>
+    <form style="padding-left: 50px; padding-right: 50px;" action="" method="POST">
+      {% csrf_token %}
+      {{ registration_form | as_bootstrap }}
+      <p class="register-button-p"><button class="register-button" type="submit">Register</button></p>
+    </form>
+    <p class="back-to-login">If you already have an account, you can <a href="{% url 'index' %}">sign in</a></p>
+  </div>
+  </div>
+  <div class="col-12 col-md-6"></div>
+</section>
 {% endblock %}

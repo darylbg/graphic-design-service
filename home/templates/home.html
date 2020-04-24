@@ -5,19 +5,18 @@
 {% block page_heading %}home{% endblock %}
 
 {% block content %}
-<div class="d-flex flex-column bd-highlight mb-3">
-  {% for product in products %}
-    <div class="product-display p-2 bd-highlight">
-      <div class="product-image">
-        <img src="{{ MEDIA_URL }}{{ product.image }}" alt="">
-      </div>
-      <div class="product-detail">
-        <h3 class="product-name">{{ product.name }}</h3>
-        <p class="product-description">{{ product.type }}</p>
-        <p class="product-description">{{ product.size }}</p>
-        <p class="product-description">{{ product.description }}</p>
-      </div>
+<section class="home">
+  <div class="row">
+    <div class="hidden-xs col-md-1 col-lg-2"></div>
+    <div class="col-9 col-md-7 col-lg-6 home-poster-img">
+      <img src="https://files.list.co.uk/images/2020/04/06/mw2r-ss-battletrailer-1920x1080-LST396342.jpg" alt="">
     </div>
-  {% endfor %}
-</div>
+    <div class="col-3 col-md-3 col-lg-2 home-poster-detail">
+      <h3 class="home-poster-title">Title</h3>
+      <p class="home-poster-type">Poster</p>
+      <p class="home-poster-dimensions">1080 x 1920</p>
+    </div>
+    <div class="hidden-xs col-md-1 col-lg-2"></div>
+  </div>
+</section>
 {% endblock %}
