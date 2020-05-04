@@ -11,7 +11,7 @@
     <div class="hidden-xs col-md-2 col-xl-3"></div>
     <div class="col-12 col-md-8 col-xl-6">
       {{ order_product_form | as_bootstrap }}
-      <form class=""  method="post" action="{% url 'add_to_cart' product.id %}">
+      <form class=""  method="post" action="">
         {% csrf_token %}
         <select class="custom-select" name="quantity" type="number">
           <option value="1" selected>1</option>
