@@ -6,12 +6,32 @@
 {% block page_heading %}Design your graphic{% endblock %}
 
 {% block content %}
-<form class="" action="" method="post">
-  {% csrf_token %}
-  {{ order_product_form | as_bootstrap }}
+<section class="custom-product">
+  <div class="row">
+    <div class="hidden-xs col-md-2 col-xl-3"></div>
+    <div class="col-12 col-md-8 col-xl-6">
+      {{ order_product_form | as_bootstrap }}
+      <form class=""  method="post" action="{% url 'add_to_cart' product.id %}">
+        {% csrf_token %}
+        <select class="custom-select" name="quantity" type="number">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
 
-  <div class="quote">price quote:</div>
+        <div id="total">total: £0</div>
 
-  <button type="submit" class="btn btn-primary">Send Request</button>
-</form>
+        <button type="submit" class="btn btn-primary">Send Request</button>
+      </form>
+    </div>
+    <div class="hidden-xs col-md-2 col-xl-3"></div>
+  </div>
+</section>
 {% endblock %}

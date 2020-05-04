@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 
 {% block page_heading %}{{ user }}'s Profile{% endblock %}
 
 
 {% block content %}
+<section class="profile">
 <p>{{ profile.email }}</p>
+<div class="row">
+      {{ profile | as_bootstrap }}
+    </div>
+</section>
 {% endblock %}

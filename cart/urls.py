@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from .views import view_cart, add_to_cart, adjust_cart, home, all_products
-from products.views import all_products
+from .views import view_cart, add_to_cart, adjust_cart
+
 
 urlpatterns = [
     url(r'^$', view_cart, name='view_cart'),

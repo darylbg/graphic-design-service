@@ -1,29 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="d-flex flex-column bd-highlight mb-3">
+
+<div class="container-fluid search-container">
+  <form action="{% url 'search' %}" method="get">
+    <input type="text" name="q" value="" placeholder="all">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+
+<div class="product-display-section d-flex flex-column bd-highlight mb-3">
   {% for product in products %}
-    <div class="product-display p-2 bd-highlight">
-      <div class="product-image">
-        <img src="{{ MEDIA_URL }}{{ product.image }}" alt="">
-      </div>
-      <div class="product-detail">
-        <h3 class="product-name">{{ product.name }}</h3>
-        <p class="product-description">{{ product.type }}</p>
-        <p class="product-description">{{ product.size }}</p>
-        <p class="product-description">{{ product.description }}</p>
-        <p class="product-description">£ {{ product.price }}</p>
-        <form class="product-price-form" method="post" action="{% url 'add_to_cart' product.id %}">
-            {% csrf_token %}
-            <div class="input-group">
-                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                <span class="input-group-btn">
-                    <button class="btn btn-success" type="submit">Add</button>
-                </span>
-            </div>
-        </form>
-      </div>
+  <div class="row product-display p-2 bd-highlight">
+    <div class="product-image col-12 col-md-8">
+      <img src="{{ MEDIA_URL }}{{ product.image }}" alt="">
     </div>
+    <div class="product-detail col-12 col-md-4">
+      <h1 class="product-name">{{ product.name }}</h1>
+      <p class="product-description">{{ product.type }}</p>
+      <p class="product-description">{{ product.size }}</p>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-description">£ {{ product.price }}</p>
+      <form class="product-price-form" method="post" action="{% url 'add_to_cart' product.id %}">
+        {% csrf_token %}
+        <select class="custom-select" name="quantity" type="number">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+            <button class="btn btn-success" type="submit">Add</button>
+
+      </form>
+    </div>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}

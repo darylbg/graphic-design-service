@@ -6,30 +6,54 @@
 
 {% block content %}
 <section class="row body-background">
-  <div class="col-12 col-md-6"">
+  <div class="col-12 col-lg-5">
     <div class="index-login">
-    <h3 class="index-login-title" style="padding-left: 50px; padding-right: 50px; padding-top: 70px;">Login</h3>
-    <form class="index-login-form" action="" method="POST" style="padding-left: 50px; padding-right: 50px;">
+    <h1 class="index-login-title" style="padding-left: 60px; padding-right: 60px; padding-top: 70px; color: #25274d;">Login</h1>
+    <form class="index-login-form" action="" method="POST" style="padding-left: 60px; padding-right: 60px;">
       {% csrf_token %}
       {{ login_form | as_bootstrap }}
-      <p class="index-reset-password"><a href="{% url 'password_reset' %}">Reset Password</a></p>
+      <p class="index-reset-password"><a href="{% url 'password_reset' %}" style="color: #25274d;">Reset Password</a></p>
       <p class="index-login-button-p"><button class="index-login-button" type="submit">Login</button></p>
     </form>
-    <p class="index-create-account" style="padding-left: 50px; padding-right: 50px;"><a href="{% url 'registration' %}">Create account here →</a></p>
+    <p class="index-create-account" style="padding-left: 60px; padding-right: 60px; color: #25274d;"><a href="{% url 'registration' %}" style="color: #25274d;">Create account here →</a></p>
   </div>
   </div>
-  <div class="col-12 col-md-6">
+  <div class="col-lg-7 glide-to-hide">
     <div class="glide">
-      <div class="glide__track" data-glide-el="track">
+      <div class="glide__track" data-glide-el="track" style="height: 100%;">
         <ul class="glide__slides">
           <li class="glide__slide">
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="">
+            <div class="carousel-div">
+              <div class="carousel-img">
+                <img src="https://miro.medium.com/max/3752/1*miVo3wJfHxh-m5DZi147Sg.jpeg" alt="">
+              </div>
+              <div class="carousel-detail">
+                <h1>Poster</h1>
+                <p>Some text about to fill in this space about the card</p>
+              </div>
+            </div>
           </li>
           <li class="glide__slide">
-            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="">
+            <div class="carousel-div">
+              <div class="carousel-img">
+                <img src="https://miro.medium.com/max/3752/1*miVo3wJfHxh-m5DZi147Sg.jpeg" alt="">
+              </div>
+              <div class="carousel-detail">
+                <h1>Logo</h1>
+                <p>Some text about to fill in this space about the card</p>>
+              </div>
+            </div>
           </li>
           <li class="glide__slide">
-            <img src="https://media-cdn.tripadvisor.com/media/photo-s/14/19/12/cb/beautiful-sunset-from.jpg" alt="">
+            <div class="carousel-div">
+              <div class="carousel-img">
+                <img src="https://miro.medium.com/max/3752/1*miVo3wJfHxh-m5DZi147Sg.jpeg" alt="">
+              </div>
+              <div class="carousel-detail">
+                <h1>Icon</h1>
+                <p>Some text about to fill in this space about the card</p>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
