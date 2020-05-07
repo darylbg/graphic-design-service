@@ -1,15 +1,14 @@
-{% extends 'base.html' %}
-{% load bootstrap_tags %}
-{% block page_title %}{{ user }}'s Profile{% endblock %}
-
-{% block page_heading %}{{ user }}'s Profile{% endblock %}
-
-
+{% extends "base.html" %}
 {% block content %}
-<section class="profile">
-<p>{{ profile.email }}</p>
-<div class="row">
-      {{ profile | as_bootstrap }}
+
+<section class="profile-section">
+  <div class="col-12 col-md-6 profile">
+    <div class="profile-img">
+      <img src="https://www.kirkham-legal.co.uk/wp-content/uploads/2017/02/profile-placeholder.png" alt="">
     </div>
+    <p>You are logged in as {{ user.username }} </p>
+    <p>You are logged in under the email: {{ user.email }} </p>
+  </div>
+
 </section>
 {% endblock %}

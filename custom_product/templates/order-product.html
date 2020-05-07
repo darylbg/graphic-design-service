@@ -11,7 +11,7 @@
     <div class="hidden-xs col-md-2 col-xl-3"></div>
     <div class="col-12 col-md-8 col-xl-6">
       {{ order_product_form | as_bootstrap }}
-      <form class=""  method="" action="">
+      <form class="col-12" method="" action="">
         {% csrf_token %}
         <select class="custom-select" name="quantity" type="number">
           <option value="1" selected>1</option>
@@ -26,9 +26,9 @@
           <option value="10">10</option>
         </select>
 
-        <div id="total">total: £0</div>
-
-        <button type="submit" class="btn btn-primary">Send Request</button>
+        <div class="order-product-button-div col-12">
+          <button type="submit" class="order-product-button btn btn-default">Send Request</button>
+        </div>
       </form>
     </div>
     <div class="hidden-xs col-md-2 col-xl-3"></div>
