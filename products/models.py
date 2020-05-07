@@ -2,14 +2,19 @@ from django.db import models
 
 # Create your models here.
 TYPE_CHOICES = (
-    ('100', 'poster'),
-    ('50', 'logo'),
-    ('20', 'icon'),
+    ('POSTER', 'poster'),
+    ('LOGO', 'logo'),
+    ('ICON', 'icon'),
 )
 
 POSTER_SIZE_CHOICES = (
-    ('10', '1080 x 1920'),
-    ('20', '1080 x 1080'),
+    ('2000_X_1920', '2000 x 1920'),
+    ('1080_X_1920', '1080 x 1920'),
+    ('720_X_720', '720 x 720'),
+    ('720_X_400', '720 x 400'),
+    ('400_X_400', '400 x 400'),
+    ('200_X_200', '200 x 200'),
+    ('100_X_100', '100 x 100')
 )
 
 QUANTITY_CHOICES = (
